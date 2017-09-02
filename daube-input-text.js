@@ -20,7 +20,7 @@ template.innerHTML = `
 
     /* State - idle + empty **************************/
 
-    #inputdiv {
+    #daubeinputdiv {
       margin: 2rem 0;
       display: -webkit-flex;
       display: flex;
@@ -110,9 +110,9 @@ template.innerHTML = `
 
   </style>
 
-  <div id="inputdiv">
-    <input type="text" name="demo" required/>
-    <label for="demo">Demo Label:</label>
+  <div id="daubeinputdiv">
+    <input type="text"/>
+    <label></label>
   </div>
 
 `
@@ -123,7 +123,6 @@ if (window.ShadyCSS) {
 
 class DaubeInputText extends HTMLElement {
   static get observedAttributes() {
-    //TODO - input has to be required for styles to work - figure this out later
     //TODO - implement autocomplete
     //TODO - implement autofocus
     //TODO - implement form
