@@ -249,16 +249,6 @@ class DaubeInputText extends HTMLElement {
     }
   }
 
-  toggleAutocomplete() {
-    var input = this.getInput();
-
-    if (this.autocomplete) {
-      input.setAttribute('autocomplete', 'yes');
-    } else {
-      input.removeAttribute('autocomplete');
-    }
-  }
-
   processName() {
     var input = this.getInput();
 
