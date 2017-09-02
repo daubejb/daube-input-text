@@ -25,10 +25,10 @@ Include the <daube-input-text> custom element in the html page
 
 The following options are available manually or programatically within the opening daube-input-text html tag:
 
-1. **label** - add ```label="your desired label name"```
-2. **disabled** - add ```disabled```
-3. **name** - add ```name="your desired name"```
-4. **required** - add ```required```
+1. **label** - ```label="your desired label name"```
+2. **disabled** - ```disabled```
+3. **name** - ```name="your desired name"```
+4. **required** - ```required```
 
 
 
