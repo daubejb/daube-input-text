@@ -130,7 +130,17 @@ class DaubeInputText extends HTMLElement {
     //TODO - implement pattern
     //TODO - implement value
     //TODO - implement Helper text
-    return ['label', 'disabled', 'name', 'required'];
+    return ['label', 'disabled', 'name', 'required', 'value'];
+  }
+
+  get value() {
+    return this._value;
+  }
+
+  set value(v) {
+    if (this._value === v) return;
+    this._value = v;
+    this.setAttribute('value', v);
   }
 
   get name() {
@@ -202,6 +212,11 @@ class DaubeInputText extends HTMLElement {
         this.processLabel();
         console.log('label changed');
         break;
+
+      case 'value':
+        this.processValue();
+        console.log('value changed');
+        break;
     }
   }
 
@@ -262,6 +277,11 @@ class DaubeInputText extends HTMLElement {
   processLabel() {
     var label = this.getLabel();
     label.innerHTML = this.getAttribute('label')
+  }
+
+  processValue() {
+    var input = this.getInput();
+    input.innerHTML = this.getAttribute('value');
   }
 
 } // Class CustomElement
