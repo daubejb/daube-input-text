@@ -281,7 +281,7 @@ class DaubeInputText extends HTMLElement {
 
   processValue() {
     var input = this.getInput();
-    input.innerHTML = this.getAttribute('value');
+    input.value = this.getAttribute('value');
   }
 
 } // Class CustomElement
