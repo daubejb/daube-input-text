@@ -6,7 +6,7 @@ const rename = require('gulp-rename');
 const del = require('del');
 
 gulp.task('clean', () => {
-  return del(['./*.compiled.*'])
+  return del(['./*-compiled.*'])
 });
 
 gulp.task('compile', () => {
@@ -14,7 +14,7 @@ gulp.task('compile', () => {
     .pipe(gulpif(/\.js$/, babel()))
     .pipe(gulpif(/\.js$/, uglify()))
     .pipe(rename({
-      suffix: ".compiled"
+      suffix: "-compiled"
     }))
     .pipe(gulp.dest('./'));
 });
