@@ -30,6 +30,7 @@ The following options are available manually or programatically within the openi
 3. **name** - ```name="your desired name"```
 4. **required** - ```required```
 5. **value** - ```value="Your desired default text"```
+6. **maxlength** - ```maxlength="20"```
 
 
 

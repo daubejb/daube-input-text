@@ -128,9 +128,18 @@ class DaubeInputText extends HTMLElement {
     //TODO - implement form
     //TODO - implement inputmode
     //TODO - implement pattern
-    //TODO - implement value
     //TODO - implement Helper text
-    return ['label', 'disabled', 'name', 'required', 'value'];
+    return ['label', 'disabled', 'name', 'required', 'value', 'maxlength'];
+  }
+
+  get maxlength() {
+    return this._maxlength;
+  }
+
+  set maxlength(v) {
+    if (this._maxlength === v) return;
+    this._maxlength = v;
+    this.setAttribute('maxlength', v);
   }
 
   get value() {
@@ -217,6 +226,10 @@ class DaubeInputText extends HTMLElement {
         this.processValue();
         console.log('value changed');
         break;
+
+      case 'maxlength':
+        this.processMaxLength();
+        console.log('maxlength changed');
     }
   }
 
@@ -286,6 +299,16 @@ class DaubeInputText extends HTMLElement {
       input.removeAttribute('value');
     } else {
     input.setAttribute('value', this.getAttribute('value'));
+    }
+  }
+
+  processMaxLength() {
+    var input = this.getInput();
+
+    if (!this.hasAttribute('maxlength')) {
+      input.removeAttribute('maxlength');
+    } else {
+    input.setAttribute('maxlength', this.getAttribute('maxlength'));
     }
   }
 
