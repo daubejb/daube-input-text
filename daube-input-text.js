@@ -111,7 +111,7 @@ template.innerHTML = `
   </style>
 
   <div id="daubeinputdiv">
-    <input type="text"/>
+    <input type="text"></input>
     <label></label>
   </div>
 
@@ -281,7 +281,12 @@ class DaubeInputText extends HTMLElement {
 
   processValue() {
     var input = this.getInput();
-    input.value = this.getAttribute('value');
+
+    if (!this.hasAttribute('value')) {
+      input.removeAttribute('value');
+    } else {
+    input.setAttribute('value', this.getAttribute('value'));
+    }
   }
 
 } // Class CustomElement
