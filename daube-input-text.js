@@ -129,7 +129,14 @@ class DaubeInputText extends HTMLElement {
     //TODO - implement inputmode
     //TODO - implement pattern
     //TODO - implement Helper text
-    return ['label', 'disabled', 'name', 'required', 'value', 'maxlength'];
+    return ['label',
+            'disabled',
+            'name',
+            'required',
+            'value',
+            'maxlength',
+            'autofocus'
+    ];
   }
 
   get maxlength() {
@@ -187,6 +194,18 @@ class DaubeInputText extends HTMLElement {
     }
   }
 
+  get autofocus() {
+    return this.hasAttribute('autofocus');
+  }
+
+  set autofocus(v) {
+    if (v) {
+      this.setAttribute('autofocus', '');
+    } else {
+      this.removeAttribute('autofocus');
+    }
+  }
+
   get required() {
     return this.hasAttribute('required');
   }
@@ -230,6 +249,10 @@ class DaubeInputText extends HTMLElement {
       case 'maxlength':
         this.processMaxLength();
         console.log('maxlength changed');
+
+      case 'autofocus':
+        this.toggleAutoFocus();
+        console.log('autofocus changed');
     }
   }
 
@@ -274,6 +297,16 @@ class DaubeInputText extends HTMLElement {
       input.setAttribute('required', '');
     } else {
       input.removeAttribute('required');
+    }
+  }
+
+  toggleAutoFocus() {
+    var input = this.getInput();
+
+    if (this.autofocus) {
+      input.setAttribute('autofocus', '');
+    } else {
+      input.removeAttribute('autofocus');
     }
   }
 
