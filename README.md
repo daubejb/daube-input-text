@@ -29,6 +29,7 @@ The following options are available manually or programatically within the openi
 2. **disabled** - ```disabled```
 3. **name** - ```name="your desired name"```
 4. **required** - ```required```
+5. **value** - ```value="Your desired default text"```
 
 
 
