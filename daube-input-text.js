@@ -223,36 +223,31 @@ class DaubeInputText extends HTMLElement {
     switch (name) {
       case 'disabled':
         this.toggleDisabled();
-        console.log('disabled changed');
         break;
 
       case 'required':
         this.toggleRequired();
-        console.log('required changed');
         break;
 
       case 'name':
         this.processName();
-        console.log('name changed');
         break;
 
       case 'label':
         this.processLabel();
-        console.log('label changed');
         break;
 
       case 'value':
         this.processValue();
-        console.log('value changed');
         break;
 
       case 'maxlength':
         this.processMaxLength();
-        console.log('maxlength changed');
+        break;
 
       case 'autofocus':
         this.toggleAutoFocus();
-        console.log('autofocus changed');
+        break;
     }
   }
 
